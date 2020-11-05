@@ -1,0 +1,9 @@
+.places {
+    border-style: solid;
+    border-color: indigo;
+    font-family: 'Roboto Mono', monospace;
+    margin: 10px;
+    padding: 10px;
+    text-align: center;
+}
+
