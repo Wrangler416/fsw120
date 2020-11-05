@@ -1,4 +1,4 @@
-let vacationSpots = [
+let spotsData = [
 
     {
   

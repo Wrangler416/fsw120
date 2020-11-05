@@ -1,21 +1,23 @@
 import React from "react"
-import Vaca from "./Vaca"
+import Spot from "./Spot"
 import spotsData from "./spotsData"
 
 import "./project2.css"
 
 function App() {
 
-        const vacationSpots = spotsData.map(vaca => <Vaca place={vaca.place} price={vaca.price} timeToGo={vaca.timeToGo} />)
+    const vacaComponents = spotsData.map(spot => <Spot key={spot.id} place={spot.place} price={spot.price} timeToGo={spot.timeToGo} />)
 
         return (
             <div>
-                <vacationSpots />
-
+                
+                {vacaComponents}
+                
             </div>
         )
-        
     }
+
+export default App 
 
 
 
