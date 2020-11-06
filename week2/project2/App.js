@@ -1,7 +1,6 @@
 import React from "react"
 import Spot from "./Spot"
 import spotsData from "./spotsData"
-
 import "./project2.css"
 
 function App() {
