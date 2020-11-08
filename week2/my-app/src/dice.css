@@ -1,0 +1,15 @@
+button {
+
+    border: 1px solid;
+    padding: 10px;
+    border-radius: 10px;   
+    border-color: black; 
+}
+
+div {
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
