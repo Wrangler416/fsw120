@@ -1,0 +1,121 @@
+#form {
+    border-style: solid black 10px;
+    display: grid; 
+    grid-template-columns: 1fr 1fr;
+}
+.f  {
+    grid-column: 1 / 2;
+    width: 300px;
+    height: 30px; 
+    align-content: center; 
+    margin: 20px; 
+    border-style: solid; 
+}
+.l {
+    grid-column: 2 / 3; 
+    width: 300px;
+    height: 30px; 
+    margin: 20px; 
+    border-style: solid; 
+}
+
+.b {
+    grid-column: 2 / 3;
+    width: 300px;
+    height: 30px; 
+    margin: 20px; 
+    border-style: solid; 
+}
+
+.e {
+    grid-column: 1 / 2; 
+    width: 300px;
+    height: 30px; 
+    margin: 20px; 
+    border-style: solid; 
+}
+
+.p {
+    grid-column: 1 / 2; 
+    width: 300px;
+    height: 30px;
+    margin: 20px; 
+    border-style: solid; 
+}
+
+.ff {
+    display: grid;
+    grid-column: 2 / 3; 
+    width: 300px;
+    height: 30px; 
+    margin: 20px; 
+    border-style: solid; 
+}
+
+.a {
+    grid-column: 1 / 3; 
+    margin: 20px; 
+    border-style: solid; 
+}
+
+button {
+    margin: 20px; 
+    height: 30px;
+    width: 200px; 
+    border-style: solid; 
+}
+.badgeContainer {
+    border-style: solid; 
+    border-color: black; 
+    text-align: center;
+    display: grid;
+    grid-template-columns: 1fr 1fr; 
+}
+
+.text {
+    border-style: solid; 
+    border-color: black; 
+    height: 100px;
+    width: 500px; 
+    align-items: center;
+    text-align: center; 
+}
+
+.fn {
+    display: grid; 
+    grid-column: 1 / 2; 
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    margin: 20px; 
+}
+.ph {
+    display: grid; 
+    grid-column: 2 / 3; 
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    margin: 20px; 
+}
+
+.bp {
+    display: grid; 
+    grid-column: 1 / 2; 
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    margin: 20px; 
+}
+.fav {
+    display: grid; 
+    grid-column: 2 / 3; 
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    margin: 20px; 
+}
+.em {
+    display: grid; 
+    grid-column: 1 / 2; 
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    margin: 20px; 
+}
+
+.text {
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    margin: 20px; 
+    width: 100%;
+    height: 200px; 
+}
