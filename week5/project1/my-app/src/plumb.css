@@ -1,0 +1,38 @@
+.navbar {
+    background-color: blue; 
+    float: right; 
+    margin: 10px; 
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 25px; 
+}
+h1 {
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    text-align: center; 
+    font-size: 60px; 
+    font-style: italic;
+    font-style: bold; 
+    margin: 10px; 
+}
+h2 {
+    text-align: center; 
+    font-size: 40px; 
+    margin: 10px; 
+}
+
+.footer {
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    background-color: blue; 
+    color: white;
+    text-align: center;
+}
+
+h3 {
+    text-align: center; 
+}
+.pic {
+    margin: 10px;  
+    margin-left: 10em; 
+}
