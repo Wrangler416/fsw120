@@ -1,0 +1,45 @@
+.form {
+    align-items: center;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 3em; 
+    color: blue; 
+    margin: 20px; 
+}
+
+.input {
+    font-size: 16px;
+    font-size: max(16px, 1em);
+    font-family: inherit;
+    padding: 0.25em 0.5em;
+    background-color: navy; 
+    border: 2px solid;
+    border-radius: 4px;
+    color: white; 
+  }
+
+button {
+    border-style: solid; 
+    border-color: navy; 
+    border-radius: 20px; 
+    background-color: #2553E6; 
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 3em; 
+    color: white; 
+    align-items: center; 
+    text-align: center; 
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    margin: 20px; 
+    transition-duration: 0.4s; 
+}
+
+button:hover {
+    background-color: black; 
+}
+
+h1 {
+    color:  #2553E6; 
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 3em; 
+    margin: 20px; 
+}
