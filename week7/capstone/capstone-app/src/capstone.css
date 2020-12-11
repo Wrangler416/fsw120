@@ -9,6 +9,7 @@ form {
     flex-wrap: wrap;
     font-family: 'Josefin Sans', sans-serif;
     border-radius: 20px; 
+    margin: 20px; 
 }
 
 input {
@@ -32,5 +33,11 @@ button {
 
 button:hover {
     background-color: blue; 
+}
+
+.post {
+    display: flex; 
+    margin: auto; 
+    font-size: 2em; 
 }
 

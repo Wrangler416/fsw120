@@ -5,7 +5,7 @@ import "./capstone.css"
 function App() {
 
   const root = document.getElementById("root")
-
+  
   const [tweet, setTweet] = useState("")
   const [name, setName] = useState("")
   const [edit, setEdit] = useState("")
@@ -62,7 +62,7 @@ function createTweets(data) {
   for(let i = 0; i < data.length; i++) {
           const h1tweet = document.createElement("h1")
           h1tweet.textContent = data[i].title
-          document.body.appendChild(h1tweet)
+          root.appendChild(h1tweet)
           if(data[i].completed) { h1tweet.style.display = "none" }
 
           const deleteBtn = document.createElement("BUTTON")
@@ -108,7 +108,7 @@ function createTweets(data) {
             </input>
 
         </form>
-        <button onClick={sendTweet}>Post your tweet!</button>
+        <button className="post" onClick={sendTweet}>Post your tweet!</button>
         
 
     </div>
