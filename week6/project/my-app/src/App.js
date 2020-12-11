@@ -9,21 +9,18 @@ function App() {
   const [sub, setSub] = useState("")
   const [mul, setMul] = useState("")
   const [div, setDiv] = useState("")
-
-
+  
 function addition() {
     setAdd(num1 + num2)
-  }
-
+}
 function subtraction() {
     setSub(num1 - num2)
-  }
-
+}
 function multiply(){
-  setMul(num1 * num2)
+    setMul(num1 * num2)
 }
 function divide() {
-  setDiv(num1 / num2)
+    setDiv(num1 / num2)
 }
 
   return (
