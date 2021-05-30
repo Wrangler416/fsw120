@@ -1,6 +1,6 @@
-import React, {useState} from "react"
+import React, {useState, useEffect} from "react"
 import axios from "axios"
-import "./capstone.css"
+import "./styles.css"
 
 function App() {
 
@@ -13,16 +13,47 @@ function App() {
   const handleTweetChange = (e) => setTweet(e.target.value)
   const handleNameChange = (e) => setName(e.target.value)
 
-function sendEdit() {
-  const h1update = document.createElement("h1")
-  h1update.textContent = edit 
-  root.appendChild(h1update)
+// PUT method to edit your tweet
+
+function sendEdit(id, value, h1) {
+  setEdit(value)
+
+  axios.put("https://api.vschool.io/karatemple2/todo/" + id, {description: value})
+  .then(response => { 
+    sendTweet(response.data)
+    h1.remove()
+
+  })
+  .catch(error => console.log(error))
 }
 
-function sendTweet() {
+//Call function responsible for GET method
+useEffect(function() {
+  getData()
+}, [])
+
+//GET method 
+function getData() {
+axios.get("https://api.vschool.io/karatemple2/todo")
+
+.then(response => createTweets(response.data))
+.catch(error => console.log(error))
+}
+
+
+// Create new tweets 
+function createTweets(data) {
+
+  for(let i = 0; i < data.length; i++) {
+        sendTweet(data[i])
+  }
+}
+
+// POST AND DELETE METHODS 
+function sendTweet(tweet) {
 
     const h1 = document.createElement("h1")
-    h1.textContent = tweet + " , " + name 
+    h1.textContent = tweet.title + " , " + tweet.description
     root.appendChild(h1)
   
     const deleteBtn = document.createElement("BUTTON")
@@ -30,8 +61,17 @@ function sendTweet() {
     deleteBtn.setAttribute("id", "done")
     h1.appendChild(deleteBtn)
 
-    deleteBtn.onclick = function() {h1.style.display = "none"}
+    deleteBtn.onclick = function() {
 
+      console.log("delete")
+      axios.delete("https://api.vschool.io/karatemple2/todo/" + tweet._id)
+        .then(response => { 
+          h1.style.display = "none"
+        })
+        .catch(error => console.log(error))
+    }
+     
+  
     const editBtn = document.createElement("BUTTON")
     editBtn.textContent = "edit your post"
     h1.appendChild(editBtn)
@@ -39,49 +79,18 @@ function sendTweet() {
 
       const editInput = document.createElement("input")
       editInput.type= "text"
-      editInput.textContent = (e) => setEdit(e.target.value)
       h1.appendChild(editInput)
       
       const submitEdit = document.createElement("button")
       submitEdit.textContent = "submit your edit"
       h1.appendChild(submitEdit)
-      submitEdit.onClick={sendEdit}
-  }
+      submitEdit.onclick=() => sendEdit(tweet._id, editInput.value, h1) 
+    
+    
+    }
 
-}
+    }
   
-function getData() {
-  axios.get("https://api.vschool.io/karatemple2/todo")
-
-  .then(response => createTweets(response.data))
-  .catch(error => console.log(error))
-}
-
-function createTweets(data) {
-
-  for(let i = 0; i < data.length; i++) {
-          const h1tweet = document.createElement("h1")
-          h1tweet.textContent = data[i].title
-          root.appendChild(h1tweet)
-          if(data[i].completed) { h1tweet.style.display = "none" }
-
-          const deleteBtn = document.createElement("BUTTON")
-          deleteBtn.textContent = "delete post"
-          h1tweet.appendChild(deleteBtn)
-
-          deleteBtn.onclick = function() {
-          axios.delete("https://api.vschool.io/karatemple2/todo/" + data[i]._id, {"completed": !data[i].completed})
-
-            .then(response => { getData()})
-            .catch(error => console.log(error))
-        }
-
-          const editBtn = document.createElement("BUTTON")
-          editBtn.textContent = "edit post"
-          h1tweet.appendChild(editBtn)
-
-  }
-}
 
   return (
 
@@ -108,7 +117,14 @@ function createTweets(data) {
             </input>
 
         </form>
-        <button className="post" onClick={sendTweet}>Post your tweet!</button>
+        <button className="post" onClick={() => {
+          console.log("posted")
+          axios.post("https://api.vschool.io/karatemple2/todo", {description: tweet, title: name })
+
+              .then(response => sendTweet(response.data))
+              .catch(error => console.log(error))
+              
+              } } >Post your tweet!</button>
         
 
     </div>

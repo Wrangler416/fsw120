@@ -1,12 +1,11 @@
 import React from "react"
-import DJ from "./DJ"
-import "./box.css"
+import Heros from "./Heros"
 
 class App extends React.Component {
         render() {
             return (
                 <div>
-                    <DJ />
+                    <Heros />
                 </div>
             )
         }

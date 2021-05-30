@@ -6,16 +6,35 @@ class DJ extends React.Component {
         super(props)
             this.state  =  {
                 box: 1,
-                colorArray: ["white", "white", "white", "white"],
-                colors: ["black", "purple", "blue"]
+                colorArray: ["white", "black", "red", "blue"],
+                colors: ["white", "white", "white"]
             }
     }
-        handleClick() {
-            this.setState(prevState => ({
-               
-            }))
+
+
+    handleClick = (event)=> {
+            let setColors
+            this.setState(prevState => {
+               if(prevState.colors[0]!=="white"){
+                   setColors = ["white", "white", "white", "white"]
+               }
+               else if(prevState.colors[0]=="white"){
+                   setColors = ["black", "black", "black", "black"]
+               }
+               return {
+                   colors: setColors
+               }
+            })
 
         }
+
+handleClickParty = ()=> {
+    let setColors
+    this.setState((prevState) => {
+        setColors = ["purple", "purple", prevState.colors[2], prevState.colors[3]]
+        return 
+    })
+}
 
 render() {
         return (

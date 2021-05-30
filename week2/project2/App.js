@@ -5,7 +5,11 @@ import "./project2.css"
 
 function App() {
 
-    const vacaComponents = spotsData.map(spot => <Spot key={spot.id} place={spot.place} price={spot.price} timeToGo={spot.timeToGo} />)
+    const vacaComponents = spotsData.map(spot => <Spot 
+        key={spot.id} 
+        place={spot.place} 
+        price={spot.price} 
+        timeToGo={spot.timeToGo} />)
 
         return (
             <div>
